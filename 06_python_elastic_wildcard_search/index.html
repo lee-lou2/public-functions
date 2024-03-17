@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+<!--    viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키워드 검색</title>
+    <style>
+        .search {
+          position: relative;
+          width: 300px;
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        input {
+          width: 100%;
+          border: 1px solid #bbb;
+          border-radius: 8px;
+          padding: 10px 12px;
+          font-size: 14px;
+        }
+
+        img {
+          position : absolute;
+          width: 17px;
+          top: 10px;
+          right: 12px;
+          margin: 0;
+          cursor: pointer;
+        }
+
+        .result-list {
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 280px;
+            border: 1px solid #ddd; /* 박스 테두리 */
+            padding: 10px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .result-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .result-item.match {
+            font-weight: bold; /* 일치하는 검색어 굵게 표시 */
+        }
+
+
+        .result-item:hover {
+            background-color: #f6f6f6;
+        }
+
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: 200px;
+            height: 35px;
+            line-height: 35px;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            text-align: center;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .custom-select select {
+            width: 100%;
+            height: 100%;
+            line-height: 35px;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 0 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .register-form {
+            width: 500px;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+        }
+
+        button {
+            /*예쁜색상 배경*/
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: 10px;
+            height: 35px;
+            width: 120px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        hr {
+            width: 500px; /* 가로 길이 설정 */
+            border: none; /* 기본 테두리 제거 */
+            height: 1px; /* 선의 두께 */
+            background-color: #d5d5d5; /* 선의 색상 */
+            margin: 0 auto; /* 가운데 정렬 */
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>키워드 등록 테스트</h1>
+        <div style="margin-bottom: 30px;color: gray">추천에 사용될 키워드들을 등록해주세요<br>왼쪽 셀렉트박스는 '키워드 타입'으로 사용될 예정입니다 (검색의 정확도와 다양성을 높이기 위함)</div>
+    </center>
+    <div class="register-form">
+        <div class="custom-select">
+            <select id="keyword-type">
+                <option value="👩‍⚕️">의사</option>
+                <option value="🏥">병원</option>
+                <option value="🩺">진료 과목</option>
+            </select>
+        </div>
+        <input id="keyword-input" type="text" placeholder="키워드 입력">
+        <button id="register-button">등록</button>
+    </div>
+    <hr>
+    <center>
+        <h1>키워드 추천</h1>
+        <div style="margin-bottom: 30px;color: gray">텍스트 입력시 입력한 텍스트가 포함된 키워드가 자동으로 추천됩니다</div>
+    </center>
+    <div class="search">
+        <input id="search-input" type="text" placeholder="검색어 입력">
+        <a id="search-button"><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
+    </div>
+    <div id="result-list" class="result-list"></div>
+    <div id="search-results" class="search-results" style="margin-top: 20px"></div>
+
+    <script>
+        let searchType = '';
+        // 등록 버튼 이벤트 리스너
+        document.getElementById('register-button').addEventListener('click', function() {
+            var keywordType = document.getElementById('keyword-type').value;
+            var keyword = document.getElementById('keyword-input').value;
+
+            var data = {
+                keyword_type: keywordType,
+                keyword: keyword
+            };
+
+            fetch('/keywords/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }).then(response => response.json())
+              .then(data => {
+                  console.log('Success:', data);
+                  document.getElementById('keyword-input').value = '';
+                  alert('성공');
+              })
+              .catch((error) => {
+                  console.error('Error:', error);
+              });
+        });
+
+        document.getElementById('search-input').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('search-button').click();
+            }
+        });
+
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            var query = e.target.value;
+            var resultList = document.getElementById('result-list');
+            if (query.length > 0) {
+                fetch(`/keywords/?q=${encodeURIComponent(query)}`)
+                    .then(response => response.json())
+                    .then(data => displayResults(data));
+            } else {
+                resultList.innerHTML = '';
+                resultList.style.display = 'none'; // 검색창이 비어있을 때 박스 숨김
+            }
+        });
+
+        document.getElementById('search-button').addEventListener('click', function() {
+            var resultList = document.getElementById('result-list');
+            resultList.innerHTML = '';
+            resultList.style.display = 'none'; // 검색창이 비어있을 때 박스 숨김
+            var query = document.getElementById('search-input').value;
+            var searchResults = document.getElementById('search-results');
+            if (searchType === '') {
+                searchResults.innerHTML = '<center>키워드 타입이 선택되지 않았습니다.<br>- 키워드 타입 : ' + query + '</center>';
+            } else {
+                searchResults.innerHTML = '<center>' + searchType + ' 타입으로 검색되었습니다.<br>- 입력된 검색어 : ' + query + '</center>';
+            }
+            // fetch(`/search?q=${encodeURIComponent(query)}`)
+            //     .then(response => response.json())
+            //     .then(data => displaySearchResults(data));
+        });
+
+        function displayResults(data) {
+            var resultList = document.getElementById('result-list');
+            var query = document.getElementById('search-input').value.toLowerCase();
+            resultList.innerHTML = '';
+
+            // 데이터가 없으면 결과 리스트를 숨깁니다.
+            if (data.length === 0) {
+                resultList.style.display = 'none';
+            } else {
+                resultList.style.display = 'block'; // 또는 'flex' 등 원하는 스타일
+
+                data.forEach(hit => {
+                    var keyword = hit._source.keyword_type + ' ' + hit._source.keyword;
+                    var div = document.createElement('div');
+                    div.className = 'result-item';
+
+                    // 키워드에 검색어 부분을 굵게 표시
+                    var highlightedText = keyword.replace(new RegExp(query, "gi"), (match) => `<strong>${match}</strong>`);
+                    div.innerHTML = highlightedText;
+
+                    div.addEventListener('click', function() {
+                        searchType = hit._source.keyword_type;
+                        document.getElementById('search-input').value = hit._source.keyword;
+                        document.getElementById('search-button').click();
+                        resultList.innerHTML = '';
+                        resultList.style.display = 'none';
+                    });
+
+                    resultList.appendChild(div);
+                });
+            }
+        }
+
+
+
+        function displaySearchResults(data) {
+            var searchResults = document.getElementById('search-results');
+            searchResults.innerHTML = '';
+            // 여기에 검색 결과를 표시하는 로직을 추가합니다.
+            // 예: data['doctor']['name'], data['hospital']['name'] 등을 사용하여 결과를 표시
+        }
+
+    </script>
+</body>
+</html>
