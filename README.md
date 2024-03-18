@@ -12,7 +12,7 @@
 - epub 파일을 txt(docx) 파일로 변환하는 함수
 - ebooklib, pypandoc 를 사용해서 구현
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/01_python_epub_to_txt)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/01_python_epub_to_txt)
 
 
 ### 👉 02_python_epub_langchain_qna
@@ -21,7 +21,7 @@
 - epub 을 docx 로 변환 후 텍스트만으로 Q&A 진행
 - Dockerfile 및 배포 스크립트 포함
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/02_python_epub_langchain_qna)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/02_python_epub_langchain_qna)
 
 
 ### 👉 03_python_multimodal_embedding_dinov2
@@ -29,7 +29,7 @@
 - Facebook Dino V2 모델을 이용한 이미지 임베딩 구현
 - Dockerfile 및 배포 스크립트 포함
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/03_python_multimodal_embedding_dinov2)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/03_python_multimodal_embedding_dinov2)
 
 
 ### 👉 04_python_gpt_summary_emotion_keyword
@@ -39,14 +39,14 @@
 - 영어로 요약된 내용을 deepl 로 한글로 번역해서 사용
 - Dockerfile 및 배포 스크립트 포함
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/04_python_gpt_summary_emotion_keyword)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/04_python_gpt_summary_emotion_keyword)
 
 
 ### 👉 05_python_langchain_ensemble
 `python` `langchain` `ensemble` `faiss`
 - Ensemble Retriever 를 이용한 유사도 검색
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/05_python_langchain_ensemble)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/05_python_langchain_ensemble)
 
 
 ### 👉 06_python_elastic_wildcard_search
@@ -54,28 +54,28 @@
 - 엘라스틱서치의 와일드카드를 이용한 검색 기능 구현
 - 테스틀 위한 웹페이지, 배포 스크립트 등이 포함
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/06_python_elastic_wildcard_search)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/06_python_elastic_wildcard_search)
 
 
 ### 👉 07_python_langchain_raptor
 `python` `langchain` `raptor`
 - 랭체인 RAPTOR 방법론을 이용한 예시 파일
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/07_python_langchain_raptor)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/07_python_langchain_raptor)
 
 
 ### 👉 08_python_stable_diffusion_api
 `python` `stablediffusion` `streamlit`
 - 스트림릿을 이용해서 스테이블 디퓨전 API 를 사용할 수 있는 웹앱
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/08_python_stable_diffusion_api)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/08_python_stable_diffusion_api)
 
 
 ### 👉 09_python_scikitllm_summarize
 `python` `scikitllm`
 - ScikitLLM 을 이용한 요약 코드 구현
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/09_python_scikitllm_summarize)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/09_python_scikitllm_summarize)
 
 
 ### 👉 10_python_gpt_function_call
@@ -83,4 +83,4 @@
 - ChatGPT Function Call 예시
 - 관련 영상 : https://youtu.be/y8IMPpBdbbE?feature=shared
 
-[**\[ 🧑‍💻 코드로 이동 \]**](https://github.com/lee-lou2/public-functions/tree/main/10_python_gpt_function_call)
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/10_python_gpt_function_call)
