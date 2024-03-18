@@ -84,3 +84,33 @@
 - 관련 영상 : https://youtu.be/y8IMPpBdbbE?feature=shared
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/10_python_gpt_function_call)
+
+
+### 👉 11_python_shiftee_employee_alarm_
+`python` `shiftee`
+- 시프티 휴가자 리스트 조회
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/11_python_shiftee_employee_alarm)
+
+
+### 👉 12_python_check_memory
+`python` `memory`
+- 파이썬 메모리 확인
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/12_python_check_memory)
+
+
+### 👉 13_python_google_tts
+`python` `google` `tts`
+- 구글 무료 TTS 라이브러리 사용법
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/13_python_google_tts)
+
+
+### 👉 14_python_bark_tts
+`python` `bark` `tts`
+- Bark 오픈 소스를 이용한 TTS 구현
+- 패키지 설치용 스크립트 포함
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/14_python_bark_tts)
+

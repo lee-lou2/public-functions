@@ -49,7 +49,7 @@ def function_conversation(prompt: str):
                             "type": "integer",
                             "description": "예약 인원을 입력해주세요",
                             "default": 1,
-                            "max_value": 100
+                            "max_value": 100,
                         },
                     },
                     "required": ["restaurant", "date", "time", "number"],
@@ -82,7 +82,9 @@ def function_conversation(prompt: str):
     function = reply_content["function_call"]["name"]
     string_arguments = reply_content["function_call"]["arguments"]
     arguments = json.loads(string_arguments)
-    print(f"[ 질문에서 알아낸 정보 ]\n▶️ prompt : {prompt}\n▶️ function name : {function}\n▶️ arguments : {arguments})")
+    print(
+        f"[ 질문에서 알아낸 정보 ]\n▶️ prompt : {prompt}\n▶️ function name : {function}\n▶️ arguments : {arguments})"
+    )
     if function == "cancel_reservation_by_name":
         print(cancel_reservation_by_name(**arguments))
 
