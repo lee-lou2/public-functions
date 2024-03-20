@@ -114,3 +114,11 @@
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/14_python_bark_tts)
 
+
+### 👉 15_python_whisper_ai
+`python` `whisper` `stt`
+- Whisper AI 의 STT 를 이용한 텍스트 조회
+- 자동 자막 생성 등에 사용 가능
+- 무료 오픈 소스 사용 및 API 사용에 대한 코드 포함
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/15_python_whisper_ai)
