@@ -122,3 +122,11 @@
 - 무료 오픈 소스 사용 및 API 사용에 대한 코드 포함
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/15_python_whisper_ai)
+
+
+### 👉 16_python_youtube_to_mp3
+`python` `youtube` `pytube`
+- Youtube 링크를 이용해서 mp3 만 추출하는 코드
+- pytube 를 이용해서 간단히 구현
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/16_python_youtube_to_mp3)
