@@ -130,3 +130,10 @@
 - pytube 를 이용해서 간단히 구현
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/16_python_youtube_to_mp3)
+
+
+### 👉 17_python_whisper_auto_captions
+`python` `youtube` `pytube`
+- 길이가 긴 오디오의 경우 무음 단위로 잘라서 사용
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/17_python_whisper_auto_captions)
