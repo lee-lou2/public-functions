@@ -137,3 +137,13 @@
 - 길이가 긴 오디오의 경우 무음 단위로 잘라서 사용
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/17_python_whisper_auto_captions)
+
+
+### 👉 18_python_summerize_youtube
+`python` `youtube` `pytube` `openai` `whisper`
+- 유튜브 영상 요약
+- 영상의 mp3 추출 후 위스퍼로 텍스트 전환
+- 텍스트를 openai 로 요약
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/18_python_summerize_youtube)
+
