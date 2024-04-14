@@ -147,3 +147,18 @@
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/18_python_summerize_youtube)
 
+
+### 👉 19_python_langchain_groq
+`python` `langchain` `groq`
+- Groq 을 이용한 초고속 LangChain 구현
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/19_python_langchain_groq)
+
+
+### 👉 20_js_apps_script_notion_api
+`js` `apps script` `google` `google sheets` `notion api` `rss feed`
+- RSS 피드를 이용해서 블로그 데이터를 노션에 추가
+- Google Apps Script 로 1시간 마다 실행하는 트리거 사용
+- 구글 시트에 데이터를 기록해 중복이 발생되지 않도록 처리
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/20_js_apps_script_notion_api)
