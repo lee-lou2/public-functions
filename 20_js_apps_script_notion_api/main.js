@@ -108,6 +108,7 @@ function addToNotion(data) {
     "Notion-Version": "2022-06-28"
   };
 
+  data.reverse();
   for (var i = 0; i < data.length; i++) {
     var title = data[i][0];
     var link = data[i][1];
