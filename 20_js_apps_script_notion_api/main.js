@@ -1,3 +1,7 @@
+// Google Apps Script 코드 입니다
+// https://script.google.com/home/start
+// RSS 피드 주소, 구글 시트 ID, 노션 API KEY, 데이터베이스 ID 를 등록 후 실행해주세요
+
 function sha256(input) {
   var rawHash = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, input);
   var txtHash = '';
