@@ -162,3 +162,11 @@
 - 구글 시트에 데이터를 기록해 중복이 발생되지 않도록 처리
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/20_js_apps_script_notion_api)
+
+
+### 👉 21_python_random_strings
+`python` `random` `strings`
+- 랜덤 문자열을 숫자로 바꾸기
+- 숫자를 랜덤 문자열로 바꾸기
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/21_python_random_strings)
