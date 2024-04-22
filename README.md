@@ -171,6 +171,7 @@
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/21_python_random_strings)
 
+
 ### 👉 22_python_smoothly_cache
 `python` `django` `redis` `smoothly cache` `timeout`
 - 2개의 타임 아웃 사용
@@ -178,3 +179,12 @@
 - 비동기 처리 등을 통해 효율적인 관리
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/22_python_smoothly_cache)
+
+
+### 👉 23_python_openai_batch
+`python` `openai` `batch`
+- OpenAI 배치 기능 구현
+- 50% 비용 절감으로 효율적인 관리
+- 코드 사용 방법 등
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/23_python_openai_batch)
