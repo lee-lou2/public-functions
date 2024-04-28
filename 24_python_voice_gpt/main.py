@@ -1,3 +1,4 @@
+import os
 import time
 
 import speech_recognition as sr
@@ -6,11 +7,13 @@ from pydub import AudioSegment
 from pydub.playback import play
 
 OPENAI_API_KEY = ""
+# OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 def tts(text):
     """텍스트를 음성으로 변환"""
+    # 자세한 내용 : https://platform.openai.com/docs/guides/text-to-speech
     response = client.audio.speech.create(model="tts-1", voice="alloy", input=text)
     response.stream_to_file("output.mp3")
     song = AudioSegment.from_file("output.mp3", format="mp3")
@@ -19,6 +22,7 @@ def tts(text):
 
 def stt():
     """음성을 텍스트로 변환"""
+    # 자세한 내용 : https://github.com/Uberi/speech_recognition
     r = sr.Recognizer()
     with sr.Microphone() as source:
         audio = r.listen(source, timeout=10, phrase_time_limit=30)
@@ -27,6 +31,7 @@ def stt():
 
 def conversation(message: str):
     """AI 와 대화"""
+    # 자세한 내용 : https://platform.openai.com/docs/guides/text-generation
     response = client.chat.completions.create(
         model="gpt-4-turbo",
         messages=[{"role": "user", "content": message}]
