@@ -188,3 +188,12 @@
 - 코드 사용 방법 등
 
 [**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/23_python_openai_batch)
+
+
+### 👉 24_python_voice_gpt
+`python` `openai` `voice` `speech_recognition` `stt` `tts`
+- 목소리로 GPT 와 대화하는 기능
+- TTS, STT 를 함께 사용
+- OpenAI 의 TTS, STT 사용
+
+[**🖥️ 코드 보러가기**](https://github.com/lee-lou2/public-functions/tree/main/24_python_voice_gpt)
